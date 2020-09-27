@@ -1,3 +1,4 @@
+//imported in Story component
 import React from 'react';
 
 import './heading-tertiary.styles.scss';

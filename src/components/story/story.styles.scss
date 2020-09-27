@@ -1,0 +1,65 @@
+.story {
+    width: 75%;
+    margin: 4rem auto;
+    padding: 3rem;
+    background-color: rgba(238, 238, 238, 0.65);
+    transform: skewX(-10deg);
+    font-size: 1.5rem;
+    
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    
+
+    & > * {
+        transform: skewX(10deg);
+    }
+
+    &__shape {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        margin-right: 2rem;
+        position: relative;
+        float: left;
+        overflow: hidden;
+        z-index: 5;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-shape-outside: circle(50% at 50% 50%);// fixing some browsers
+            shape-outside: circle(50% at 50% 50%);// for shaping outside text to wrap around like a circle    
+            -webkit-clip-path: circle(50% at 50% 50%);// for fixing some browsers
+            clip-path: circle(50% at 50% 50%); // this is for making the own shape like a circle
+            border-radius: none; // because clip-path is supported and it is not necessary here.
+        }
+    }
+    &__image {
+        height: 150%; 
+        transform: translateX(-10rem) scale(1.4);
+        transition: all .5s; 
+    }
+    &__caption {
+        font-size: 2.2rem;
+        position: absolute;
+        text-align: center;
+        color: var(--color-white);
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, 10%);
+        transition: all .5s;
+    }
+    &__shape:hover &__caption {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &__shape:hover &__image {
+        filter: blur(3px) brightness(80%);
+        transform: translateX(-10rem)  scale(1);
+    }
+
+    
+    
+}

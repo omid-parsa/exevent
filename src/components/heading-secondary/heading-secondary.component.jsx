@@ -1,5 +1,6 @@
 //import in section-about component
 //import in SectionOptions component
+//imported in SectionStories component
 
 import React from 'react';
 
