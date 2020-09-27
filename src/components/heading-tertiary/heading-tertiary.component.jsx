@@ -1,4 +1,5 @@
 //imported in Story component
+//imported in Footer component
 import React from 'react';
 
 import './heading-tertiary.styles.scss';
