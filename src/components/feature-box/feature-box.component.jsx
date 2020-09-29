@@ -12,7 +12,7 @@ const FeatureBox = ({title, text, Icon}) => (
         {/* <i class="feature-box__icon icon-basic-map"></i> */}
         <Icon className='feature-box__icon'/>
         <HeadingTertiary text={title} />
-        <p class="feature-box__text">{text}</p>
+        <p className="feature-box__text">{text}</p>
     </div>
 );
 

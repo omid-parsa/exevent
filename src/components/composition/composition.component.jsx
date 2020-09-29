@@ -14,21 +14,21 @@ import pic4Large from '../../assets/img/excrusion-4-large.jpg';
 
 const Composition = () => (
     <div className="composition">
-        <img srcset={`${pic1} 300w, ${pic1Large} 1000w`}
+        <img srcSet={`${pic1} 300w, ${pic1Large} 1000w`}
             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="1"
-            class="composition__photo composition__photo--p1"
+            className="composition__photo composition__photo--p1"
             src={pic1Large}></img>
-        <img srcset={`${pic2} 300w, ${pic2Large} 1000w`}
+        <img srcSet={`${pic2} 300w, ${pic2Large} 1000w`}
             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="2"
-            class="composition__photo composition__photo--p2"
+            className="composition__photo composition__photo--p2"
             src={pic2Large}></img>
-        <img srcset={`${pic3} 300w, ${pic3Large} 1000w`}
+        <img srcSet={`${pic3} 300w, ${pic3Large} 1000w`}
             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="3"
-            class="composition__photo composition__photo--p3"
+            className="composition__photo composition__photo--p3"
             src={pic3Large}></img>
-        <img srcset={`${pic4} 300w, ${pic4Large} 1000w`}
+        <img srcSet={`${pic4} 300w, ${pic4Large} 1000w`}
             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="4"
-            class="composition__photo composition__photo--p4"
+            className="composition__photo composition__photo--p4"
             src={pic4Large}></img>
     </div>
 );
