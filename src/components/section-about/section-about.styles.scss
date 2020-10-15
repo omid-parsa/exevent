@@ -8,7 +8,7 @@
         display: table;
     }
 
-    // @include respond(tab-port) {
-    //     padding: 20rem 0;
-    // }
+    @media only screen and (max-width: 75em) {
+        padding: 15rem 0;
+    }
 }

@@ -25,6 +25,13 @@
   --gutter-vertical: 8rem;
   --gutter-vertical-small: 6rem;
   --gutter-horizontal: 6rem; 
+
+
+  --phone: 37.5em;
+  --tab-land: 56.25em;
+  --tab-port: 75em;
+  --big-desktop: 112.5em;
+
 }
 
 *,
@@ -37,6 +44,18 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: 56.25em) {//tab-land
+      font-size: 56.25%;
+  }
+  @media only screen and (max-width: 75em) {//tab-port
+      font-size: 50%;
+  }
+  @media only screen and (max-width: 112.5em) {//big-desktop
+      font-size: 75%;
+  }
+
+
 }
 body {
   font-family: 'Lato', sans-serif;
@@ -44,6 +63,10 @@ body {
   line-height: 1.7;  
   color: var(--color-font-primary);
   padding: 3rem;
+
+  @media only screen and (max-width: 56.25em) {//tab-land
+    padding: 0;
+  }
 }
 //LAYOUTS
 
@@ -52,16 +75,32 @@ body {
   margin: 0 auto;
 
   &:not(:last-child){
-      margin-bottom: var(--gutter-vertical);  
-  } 
+      margin-bottom: var(--gutter-vertical); 
+      
+      @media only screen and (max-width: 75em) { //tab-port
+          margin-bottom: var(--gutter-vertical-small);
+      }
+    } 
+    @media only screen and (max-width: 75em) {//tab-port
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
 
   [class^="col-"] {
       float: left;
 
-      &:not(:last-child) {
-          margin-right: var(--gutter-horizontal);          
-      }     
-  }
+        &:not(:last-child) {
+            margin-right: var(--gutter-horizontal);  
+            
+            @media only screen and (max-width: 75em) {//tab-port
+                margin-right: 0;
+                margin-bottom: var(--gutter-vertical-small);
+            }
+        } 
+        @media only screen and (max-width: 75em){
+            width: 100% !important;
+        }    
+    }
 
   .col-1-of-2{
       width: calc( (100% - var(--gutter-horizontal)) / 2);
@@ -90,23 +129,23 @@ body {
 .u-margin-bottom-medium { 
     margin-bottom: 4rem !important;
 
-    // @include respond(tab-port) {
-    //     margin-bottom: 3rem !important;
-    // }
+    @media only screen and (max-width: 75em) {//tab-port
+        margin-bottom: 3rem !important;
+    }
 }
 .u-margin-bottom-big { 
     margin-bottom: 8rem !important;
 
-    // @include respond(tab-port) {
-    //     margin-bottom: 5rem !important;
-    // }
+    @media only screen and (max-width: 75em) {//tab-port
+        margin-bottom: 5rem !important;
+    }
 }
 .u-margin-top-small { 
     margin-top: 3rem !important;
 
-    // @include respond(tab-port) {
-    //     margin-bottom: 5rem !important;
-    // }
+    @media only screen and (max-width: 75em) {//tab-port
+        margin-bottom: 5rem !important;
+    }
 }
 
 .u-margin-top-huge { margin-top: 10rem !important; }

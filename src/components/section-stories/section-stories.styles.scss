@@ -2,7 +2,7 @@
     position: relative;
     padding: 15rem 0;
 
-    // @include respond(tab-port) {
-    //     padding: 10rem 0;
-    // }
+    @media only screen and (max-width: 75rem) {
+        padding: 10rem 0;
+    }
 }

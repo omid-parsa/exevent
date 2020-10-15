@@ -11,10 +11,21 @@
         clear: both;
         display: table;
     }
+    @media only screen and (max-width: 75em) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+    @media only screen and (max-width: 37.5em) {
+        transform: skewX(0);
+    }
     
 
     & > * {
         transform: skewX(10deg);
+        @media only screen and (max-width: 37.5em) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__shape {
@@ -34,11 +45,15 @@
             clip-path: circle(50% at 50% 50%); // this is for making the own shape like a circle
             border-radius: none; // because clip-path is supported and it is not necessary here.
         }
+        
     }
     &__image {
         height: 150%; 
         transform: translateX(-10rem) scale(1.4);
         transition: all .5s; 
+        @media only screen and (max-width: 37.5em) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
     &__caption {
         font-size: 2.2rem;
